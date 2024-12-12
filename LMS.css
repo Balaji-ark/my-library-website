@@ -61,7 +61,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #8a2be2;
+    background-color: #6a0572;
 }
 
 /* Home Page */
@@ -82,7 +82,7 @@ input[type="submit"]:hover {
 
 #home-container .get-started-btn {
     padding: 15px 30px;
-    background-color: #8a2be2;
+    background-color: #6a0572;
     color: white;
     font-size: 18px;
     text-decoration: none;
@@ -124,13 +124,13 @@ input[type="submit"]:hover {
 
 #down h3 {
     font-size: 22px;
-    color: #8a2be2;
+    color: #6a0572;
     margin-bottom: 10px;
 }
 
 #down h2 {
     font-size: 28px;
-    color: #8a2be2;
+    color: #6a0572;
     margin-bottom: 20px;
 }
 
