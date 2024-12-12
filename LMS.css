@@ -1,172 +1,175 @@
-#background{
-    min-height: 1050px;
-    width: 100%;
-   
+/* Base Style - Mobile-first */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #1d1f21, #6a0572);
+    color: #fff;
+    margin: 0;
 }
-#top{
-    height: 35px;
-    width: 100%;
-    background:#2c7ad6;
-   line-height: 35px;
-   padding: 0px 20px 9px 100px;
-   box-sizing: border-box;
-    word-spacing:10px ;
-    
+
+/* Navigation Menu */
+#menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #2c2f33;
 }
-#menu{
-    height: 65px;
-    width: 100%;
-    background:green;
-   
+
+#logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
 }
-#logo{
-    height: 65px;
-    width: 40%;
-    background:white;
-    text-align: center;
-    line-height: 65px;
-    font-size: 40px;
-    float: left;
-}
-#menu1{
-    height: 65px;
-    width: 60%;
-    background:white;
-    float: left;
-    
-}
-#menu1 UL{
+
+#menu1 ul {
     list-style: none;
-    padding-left: 200px;
-    box-sizing: border-box;
-    
-}
-#menu1 LI{
-    height: 45px;
-    width: 130px;
-  
-    text-align: center ; 
-    display: inline-block; 
-    line-height: 45px;
-    transform: translateY(-5px);
-    color: black;
-    font-size: 20px;
-   
-}
-#menu1 LI:hover{
-    background: #2c7ad6;  
-    color: white; 
-    transition: all ease 1s;
-    border-radius: 3px;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
 }
 
-#slider{
-    height:640px;
-    width: 100%;
-    background:url(image/4.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-   /* animation-name:slider;
-    animation-duration: 20s;
-    animation-iteration-count:infinite ;
-   animation-delay: 3s;*/
+#menu1 ul a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+    transition: background 0.3s, color 0.3s;
 }
-/*
-@keyframes slider{
-   
-    from{
-        background:url(image/4.jpg);
-        background-size: cover;
-        background-attachment: fixed;
+
+#menu1 ul a:hover {
+    background: #8a2be2;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Slider Section */
+#slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    margin: 20px;
+}
+
+#slider h1 {
+    font-size: 36px;
+    color: #8a2be2;
+    margin-bottom: 10px;
+}
+
+#slider p {
+    font-size: 18px;
+    color: #ccc;
+}
+
+/* Login and Cards */
+.login-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.login-card {
+    background: #2c2f33;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    text-align: center;
+}
+
+.login-card h2 {
+    color: #8a2be2;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+#down {
+    text-align: center;
+    padding: 20px;
+    background: #1d1f21;
+    color: #ccc;
+}
+
+#down h3, #down h2 {
+    color: #8a2be2;
+}
+
+#down .social-icons {
+    margin-top: 20px;
+}
+
+#down .social-icons i {
+    font-size: 30px;
+    color: #fff;
+    margin: 0 10px;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #2c2f33;
+    color: #8a2be2;
+}
+
+/* Responsive Design - Tablet and Smaller Screens */
+@media (max-width: 768px) {
+    #menu1 ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
     }
-    to{
-        background:url(image/4.jpg);
-        background-size: cover;
-        background-attachment: fixed;
-    } 
-}
-*/
-#x{
-    height:640px;
-    width: 40%;
-    background:rgba(0,0,0, .4); 
-    float: left;
-    font-size: 41PX;
-    color: white;
-    text-align: center;
-    padding-top: 250px;
-    box-sizing: border-box;
-}
-#y{
-    height:640px;
-    width: 30%;
-    background:rgba(0,0,0, .4); 
-    float: left;
-    
-    
-}
-#z{
-    height:640px;
-    width: 30%;
-    background:rgba(0,0,0, .4); 
-    float: left;
-}
-#l{
-    height:450px;
-    width: 80%;
-    background:rgba(255,255,255, .6); 
-    float: left; 
-    margin: 90px;
-    border-radius: 7px ;
-    
-}
-#l:hover{
-    background:linear-gradient(45deg,rgba(50,177,40, .6),rgba(255,255,255, .6));
+
+    .login-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #slider h1 {
+        font-size: 28px;
+    }
+
+    #slider p {
+        font-size: 16px;
+    }
+
+    .login-card {
+        width: 100%;
+        margin: 10px 0;
+    }
 }
 
-#r{
-    height:450px;
-    width: 80%;
-    background:rgba(44,122,214, .6); 
-    float: left;
-    margin: 90px auto;
-    border-radius: 7px ;
+/* Mobile Devices */
+@media (max-width: 480px) {
+    #slider h1 {
+        font-size: 24px;
+    }
 
-}
-#r:hover{
-    background:linear-gradient(45deg,rgba(50,177,40, .6),rgba(255,255,255, .6));
-}
-#student{
-    margin:50px 50px;
-    color:blue;
-    
-}
-#Teacher{
-    margin:50px 50px;
-    color:white;
-}
-.t{
-    height: 40px;
-    width: 100%;
-    border: 2px solid green;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-bottom: 15px;
-    
-}
-#down{
-    height: 300px;
-    width: 100%;
-    margin-top: 10px;
-    background:#2c7ad6;
-    text-align: center;
-    padding-top: 10px;
-    color: white;
-}
-.footer{
-    height: 20px;
-    width: 100%;
-    background: black;
-    color: white;
-    text-align: center;
+    #slider p {
+        font-size: 14px;
+    }
+
+    .login-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login-card {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    #down {
+        padding: 15px;
+    }
+
+    #down .social-icons i {
+        font-size: 25px;
+    }
 }
