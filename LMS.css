@@ -133,7 +133,7 @@ body {
 #down {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     padding: 20px;
     background: #2c2f33;
     border-radius: 10px;
@@ -159,7 +159,7 @@ body {
     font-size: 16px;
     color: #fff;
     line-height: 1.6;
-    margin: 7px 0;  /* Adds gap between each <p> tag */
+    margin: 5px 0;  /* Adds gap between each <p> tag */
 }
 
 #down .social-icons {
