@@ -153,6 +153,182 @@
                 align-items: center;
             }
         }
+        /* Base Style - Mobile-first */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #1d1f21, #6a0572);
+    color: #fff;
+    margin: 0;
+}
+
+/* Navigation Menu */
+#menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #2c2f33;
+}
+
+#logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+#menu1 ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+#menu1 ul a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+    transition: background 0.3s, color 0.3s;
+}
+
+#menu1 ul a:hover {
+    background: #8a2be2;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Slider Section */
+#slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    margin: 20px;
+}
+
+#slider h1 {
+    font-size: 36px;
+    color: #8a2be2;
+    margin-bottom: 10px;
+}
+
+#slider p {
+    font-size: 18px;
+    color: #ccc;
+}
+
+/* Login and Cards */
+.login-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.login-card {
+    background: #2c2f33;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    text-align: center;
+}
+
+.login-card h2 {
+    color: #8a2be2;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+#down {
+    text-align: center;
+    padding: 20px;
+    background: #1d1f21;
+    color: #ccc;
+}
+
+#down h3, #down h2 {
+    color: #8a2be2;
+}
+
+#down .social-icons {
+    margin-top: 20px;
+}
+
+#down .social-icons i {
+    font-size: 30px;
+    color: #fff;
+    margin: 0 10px;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #2c2f33;
+    color: #8a2be2;
+}
+
+/* Responsive Design - Tablet and Smaller Screens */
+@media (max-width: 768px) {
+    #menu1 ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .login-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #slider h1 {
+        font-size: 28px;
+    }
+
+    #slider p {
+        font-size: 16px;
+    }
+
+    .login-card {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+    #slider h1 {
+        font-size: 24px;
+    }
+
+    #slider p {
+        font-size: 14px;
+    }
+
+    .login-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login-card {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    #down {
+        padding: 15px;
+    }
+
+    #down .social-icons i {
+        font-size: 25px;
+    }
+}
+
     </style>
 </head>
 <body>
