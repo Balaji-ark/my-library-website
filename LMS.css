@@ -131,10 +131,10 @@ body {
 /* Footer Section */
 #down {
     text-align: center;
-    padding: 20px;
+    padding: 30px;
     background: #1d1f21;
     color: #ccc;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 #down h3, #down h2 {
@@ -142,7 +142,7 @@ body {
 }
 
 #down .social-icons {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 #down .social-icons i {
