@@ -129,34 +129,80 @@ body {
 }
 
 /* Footer Section */
+/* Down Section */
 #down {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background: #2c2f33;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     text-align: center;
-    padding: 30px;
-    background: #1d1f21;
-    color: #ccc;
-    margin-top: 30px;
 }
 
-#down h3, #down h2 {
+#down h3 {
+    font-size: 24px;
     color: #8a2be2;
+    margin-bottom: 10px;
+}
+
+#down h2 {
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+#down p {
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.6;
+    margin: 5px 0;
 }
 
 #down .social-icons {
-    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
 }
 
-#down .social-icons i {
-    font-size: 30px;
-    color: #fff;
-    margin: 0 10px;
+#down .social-icons a {
+    color: #8a2be2;
+    font-size: 24px;
     transition: color 0.3s;
 }
 
-#down .social-icons i:hover {
-    color: #6a0572;
-    transform: scale(1.2);
+#down .social-icons a:hover {
+    color: #fff;
 }
 
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+    #down {
+        padding: 15px;
+    }
+
+    #down h3 {
+        font-size: 22px;
+    }
+
+    #down h2 {
+        font-size: 24px;
+    }
+
+    #down p {
+        font-size: 14px;
+    }
+
+    #down .social-icons a {
+        font-size: 20px;
+    }
+}
+
+  
 /* Footer */
 .footer {
     padding: 20px;
