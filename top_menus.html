@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartShelf</title>
+    <style>
+        /* Body styles with gradient background and fade-in animation */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #1d1f21, #6a0572);
+            color: #fff;
+            animation: fadeIn 2s ease-in;
+            height: 100vh;
+        }
+
+        /* Ensure no padding or margin for body or html */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        /* Full-width navbar with rounded corners */
+        .navbar {
+            background-color: #031b3a;  /* Dark blue background */
+            width: 100%;  /* Full width */
+            padding: 10px;  /* Add some padding */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);  /* Subtle shadow */
+            border-radius: 30px;  /* Rounded corners for navbar */
+            margin: 20px;  /* Margin for spacing */
+        }
+
+        /* Navbar toggler button with rounded corners */
+        .navbar-toggler {
+            border: 2px solid #8a2be2;  /* Purple border */
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-toggler-icon {
+            background: url('https://img.icons8.com/ios-filled/50/8a2be2/menu.png') no-repeat center;
+            background-size: contain;
+        }
+
+        /* Navbar links with rounded buttons */
+        .navbar-nav .nav-link {
+            color: #ffffff !important;  /* Force white text color */
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            border-radius: 20px;  /* Rounded corners for buttons */
+            padding: 8px 15px;  /* Padding for buttons */
+            margin: 5px;  /* Spacing between buttons */
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: #b491d4;  /* Purple hover background */
+            color: #ffffff;  /* Keep text white on hover */
+            transform: scale(1.1);  /* Subtle zoom effect */
+        }
+
+        /* Underline animation */
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #8a2be2;  /* Purple underline */
+            transition: all 0.4s ease;
+        }
+
+        .navbar-nav .nav-link:hover::after {
+            left: 0;
+            right: 0;
+            width: 100%;
+        }
+
+        /* SmartShelf link style */
+        h1 a.nav-link {
+            font-size: 28px; /* Slightly larger size for the logo */
+            color: #ffffff;
+            letter-spacing: 2px;
+            transition: transform 0.3s ease;
+        }
+
+        h1 a.nav-link:hover {
+            color: #8a2be2;  /* Purple text color on hover */
+            transform: scale(1.1);
+        }
+
+        /* Smart part of the logo */
+        .logo-text {
+            font-size: 28px;  /* Slightly larger for a futuristic vibe */
+            color: #ffffff;  /* White color for 'Smart' */
+        }
+
+        /* Shelf part of the logo */
+        .logo-highlight {
+            font-size: 28px;  /* Same size for 'Shelf' */
+            color: #8a2be2;  /* Purple color for 'Shelf' */
+            font-weight: bold;  /* Bold 'Shelf' */
+        }
+
+        /* Fade-in effect */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Futuristic hover effect on navbar */
+        .navbar-nav .nav-item:hover {
+            transform: translateY(-5px);  /* Slight raise on hover */
+            transition: transform 0.2s ease-out;
+        }
+
+        /* Username and Logout Button Style */
+        .navbar-nav .username {
+            color: #8a2be2;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+            border-radius: 20px;
+            padding: 8px 15px;
+            margin: 5px;
+        }
+
+        .navbar-nav .username:hover {
+            color: #ffffff;
+            background-color: #8a2be2;  /* Purple background on hover */
+        }
+
+        /* Extra padding for navbar items */
+        .navbar-nav .nav-item {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsingNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <h1>
+                        <a class="nav-link" href="/">
+                            <span class="logo-text">Smart</span><span class="logo-highlight">Shelf</span>
+                        </a>
+                    </h1>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                {% if session['userid'] %}
+                    <li class="nav-item">
+                        <a class="nav-link username" href="view_user">{{ session.name }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>

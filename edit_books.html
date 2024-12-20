@@ -1,0 +1,95 @@
+{% include 'header.html' %}
+<script src="{{ url_for('static', filename='js/books.js') }}"></script>
+<body>
+  <div class="container-fluid" id="main">
+    {% include 'top_menus.html' %}
+    <div class="row row-offcanvas row-offcanvas-left">   
+      {% include 'left_menus.html' %}
+      <div class="col-md-9 col-lg-10 main">
+        <h1>Edit Book</h1>
+        <br>
+
+        <form action="{{ url_for('edit_book', bookid=books.bookid) }}" method="POST" enctype="multipart/form-data">
+            <label for="name">Book Name:</label>
+            <input type="text" id="name" name="name" value="{{ books.name }}" required><br><br>
+    
+            <label for="authorid">Author:</label>
+            <select name="authorid" id="authorid">
+                {% for author in authors %}
+                    <option value="{{ author.authorid }}" {% if author.authorid == books.authorid %}selected{% endif %}>{{ author.name }}</option>
+                {% endfor %}
+            </select><br><br>
+    
+            <label for="categoryid">Category:</label>
+            <select name="categoryid" id="categoryid">
+                {% for category in categories %}
+                    <option value="{{ category.categoryid }}" {% if category.categoryid == books.categoryid %}selected{% endif %}>{{ category.name }}</option>
+                {% endfor %}
+            </select><br><br>
+    
+            <label for="publisherid">Publisher:</label>
+            <select name="publisherid" id="publisherid">
+                {% for publisher in publishers %}
+                    <option value="{{ publisher.publisherid }}" {% if publisher.publisherid == books.publisherid %}selected{% endif %}>{{ publisher.name }}</option>
+                {% endfor %}
+            </select><br><br>
+    
+            <label for="status">Status:</label>
+            <input type="text" id="status" name="status" value="{{ books.status }}" required><br><br>
+    
+            <label for="isbn">ISBN:</label>
+            <input type="text" id="isbn" name="isbn" value="{{ books.isbn }}" required><br><br>
+    
+            <label for="pdf">PDF File:</label>
+            <input type="file" id="pdf" name="pdf"><br><br>
+            
+            <input type="hidden" name="existing_pdf_path" value="{{ books.pdf_path }}">
+    
+            <label for="added_on">Added On:</label>
+            <input type="text" id="added_on" name="added_on" value="{{ books.added_on }}" disabled><br><br>
+    
+            <label for="updated_on">Updated On:</label>
+            <input type="text" id="updated_on" name="updated_on" value="{{ books.updated_on }}" disabled><br><br>
+    
+            <button type="submit">Save Changes</button>
+        </form>
+    
+        <a href="{{ url_for('books') }}">Back to Books</a>
+    </body>
+    </html>
+<style>
+  body {
+    color: #fff; /* White text for all body content */
+  }
+
+  .form-group label {
+    color: #fff; /* Ensure labels are white */
+  }
+
+  input.form-control,
+  select.form-control {
+    color: #fff; /* White text inside form fields */
+    border: 1px solid #444; /* Keep border for visibility */
+  }
+
+  input.form-control::placeholder {
+    color: #aaa; /* Grey placeholder text */
+  }
+
+  input.form-control:focus,
+  select.form-control:focus {
+    border-color: #00ffff; /* Cyan border on focus */
+    box-shadow: 0 0 5px #00ffff;
+  }
+
+  .btn-info {
+    background-color: #00ffff;
+    border: none;
+    color: #121212; /* Button text color */
+  }
+
+  .btn-info:hover {
+    background-color: #ff69b4;
+    color: #fff;
+  }
+</style>
